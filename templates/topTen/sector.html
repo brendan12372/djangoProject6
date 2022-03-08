@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'topTen/style.css' %}"><!doctype html>
+
+    <title>Sector Analytics</title>
+
+</head>
+<body>
+<form method="post">
+<label for="sortBy">sortBy</label>
+
+    <select name="sortBy" id="sortBy">
+        <option value={{sortBy}}> {{sortBy}} </option>
+            {% for m in ml %}
+    <option value={{m}}> {{m}} </option>
+{% endfor %}
+    </select><br>
+
+
+
+<label for="normalize">Normalize</label>
+        <select name="normalize" id="normalize">
+        <option value={{normalize}}> {{normalize}} </option>
+               <option value=True>True</option>
+               <option value=False>False</option>
+        </select><br>
+
+<label for="dir">Direction:</label>
+        <select name="dir" id="dir">
+        <option value={{dir}}> {{dir}} </option>
+               <option value="up">Ascending</option>
+               <option value="down">Descending</option>
+        </select><br>
+
+
+
+    <input type="submit" value="Submit">
+{#<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">#}
+{#<label for="vehicle3"> I have a boat</label><br>#}
+</form>
+<p>{{info}}</p>
+<div class="theList">
+<ol>
+{% for k,v in data.items %}
+    <li type=="1"> {{k}}: {{ v }} </li>
+{% endfor %}
+</ol>
+</div>
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+</body>
+</html>
